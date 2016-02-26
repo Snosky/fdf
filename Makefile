@@ -6,7 +6,7 @@
 #    By: tpayen <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/25 15:06:22 by tpayen            #+#    #+#              #
-#    Updated: 2016/02/25 16:20:26 by tpayen           ###   ########.fr        #
+#    Updated: 2016/02/26 16:16:00 by tpayen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ INCLUDES = -I $(LIBFTDIR) -I includes
 LIBS = $(LIBFTDIR)libft.a
 
 SRC_FILES = main.c	\
+			init_env.c	\
+			get_map.c	\
 
 DIRS = $(OBJDIR)
 
