@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:31:53 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/26 16:32:35 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 18:10:34 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,10 @@ void	get_map(char *filename, t_env *env)
 	int	gnl;
 	char	*line;
 	char	**split;
-	int		max_line;
 
 	if ((fd = open(filename, O_RDONLY)) == -1)
 		ft_err_filename(filename);
-	env->px.y = 0;
-	max_line = -1;
+	env->max_x_map = -1;
 	while ((gnl = get_next_line(fd, &line)))
 	{
 		if (gnl == -1)
@@ -61,10 +59,11 @@ void	get_map(char *filename, t_env *env)
 			env->px.x++;
 			free(*split++);
 		}
-		if (max_line != -1 && max_line != env->px.x)
+		if (env->max_x_map != -1 && env->max_x_map != env->px.x)
 			ft_err_map(filename);
-		max_line = env->px.x;
+		env->max_x_map = env->px.x;
 		env->px.y++;
 		free(line);
 	}
+	env->max_y_map = env->px.y;
 }

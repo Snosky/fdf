@@ -10,6 +10,8 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
+INCLUDES = -Iincludes
+
 SRCFILES_PART1 =	ft_memset.c		\
 					ft_bzero.c		\
 					ft_memcpy.c		\
@@ -80,7 +82,7 @@ SRCFILES_MY_BONUS =	ft_isupper.c	\
 					ft_strswap.c	\
 					ft_bcopy.c		\
 
-GET_NEXT_LINE = get_next_line.c
+GET_NEXT_LINE	= get_next_line.c
 
 SRCFILES = $(SRCFILES_PART1) $(SRCFILES_PART2) $(SRCFILES_BONUS) $(SRCFILES_MY_BONUS) $(GET_NEXT_LINE)
 
@@ -97,7 +99,7 @@ $(NAME): $(SRC_OBJ)
 	ar rc $@ $^
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(FLAGS)
+	$(CC) -o $@ -c $< $(FLAGS) $(INCLUDES)
 
 .PHONY: clean fclean re
 

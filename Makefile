@@ -6,7 +6,7 @@
 #    By: tpayen <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/25 15:06:22 by tpayen            #+#    #+#              #
-#    Updated: 2016/02/26 16:16:00 by tpayen           ###   ########.fr        #
+#    Updated: 2016/02/27 17:57:11 by tpayen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,14 @@ SRCDIR = src/
 LIBFTDIR = libft/
 OBJDIR = obj/
 
-INCLUDES = -I $(LIBFTDIR) -I includes
+INCLUDES = -I$(LIBFTDIR)/includes -Iincludes
 LIBS = $(LIBFTDIR)libft.a
 
 SRC_FILES = main.c	\
 			init_env.c	\
 			get_map.c	\
+			draw_map.c	\
+			draw_line.c	\
 
 DIRS = $(OBJDIR)
 

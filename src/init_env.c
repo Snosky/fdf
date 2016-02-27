@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:22:38 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/26 16:28:59 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 17:16:02 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ t_env	*init_env(char	*filename)
 		ft_env_init_err();
 	env->mlx = mlx_init();
 	env->win = mlx_new_window(env->mlx, WIN_SX, WIN_SY, filename);
-	(void)filename;
 	env->map = NULL;
+	env->px.y = 0;
+	env->max_y_map = 0;
+	env->max_x_map = 0;
+	env->ratio = 1;
 	return (env);
 }

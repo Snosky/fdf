@@ -6,53 +6,73 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 17:14:03 by tpayen            #+#    #+#             */
-/*   Updated: 2015/01/21 18:36:15 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 17:00:18 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		nb_words(char const *s, char c)
+static int		wc(const char *s, char c)
 {
 	int	i;
-	int	ret;
-
-	i = 0;
-	ret = 0;
-	while (s[i])
-	{
-		if (s[i] == c || s[i] == 0)
-			ret++;
-		i++;
-	}
-	return (ret);
-}
-
-char	**ft_strsplit(char const *s, char c)
-{
-	char	**ret;
-	int		i;
-	int		j;
-	int		k;
-	int		s_l;
+	int	j;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	s_l = ft_strlen(s) + 1;
-	if (!(ret = (char **)malloc(sizeof(char *) * (nb_words(s, c) + 1))))
-		return (NULL);
-	while (s_l--)
+	while (s[i])
 	{
-		if (s[i] != c && s[i] != 0)
-			j++;
-		else if (i && (s[i] == c || s[i] == '\0') && s[i - 1] != c)
+		if (s[i] != c)
 		{
-			if (!(ret[k++] = ft_strsub(s, i - j, j)))
-				return (NULL);
-			j = 0;
+			j++;
+			while (s[i] != c)
+			{
+				if (!s[i])
+					return (j);
+				i++;
+			}
 		}
 		i++;
+	}
+	return (j);
+}
+
+static int		wl(const char *s, int i, char c)
+{
+	int	j;
+
+	j = 0;
+	while (s[i] != c && s[i])
+	{
+		i++;
+		j++;
+	}
+	return (j);
+}
+
+char			**ft_strsplit(const char *s, char c)
+{
+
+	char	**ret;
+	int		i;
+	int		k;
+	int		w;
+
+	if (!s)
+		return (0);
+	w = wc(s, c);
+	if (!(ret = (char **)malloc(sizeof(char *) * w + 1)))
+		return (NULL);
+	i = 0;
+	k = 0;
+	ret[w] = 0;
+	while (k < w)
+	{
+		while (s[i] == c)
+			i++;
+		ret[k] = ft_strsub(s, i, wl(s, i, c));
+		while (s[i] && s[i] != c)
+			i++;
+		k++;
 	}
 	return (ret);
 }

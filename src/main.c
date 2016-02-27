@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:17:50 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/26 16:43:24 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 17:21:54 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,17 @@ int		main(int ac, char **av)
 		ft_err_usage();
 	env = init_env(av[1]);
 	get_map(av[1], env);
+	draw_map(env);
+/*
+	t_list	*map = env->map;
+	t_px *px;
+	while (map)
+	{
+		px = map->content;
+		printf("X: %d, Y: %d, Z: %d\n", px->x, px->y, px->z);
+		map = map->next;
+	}
+*/
+	mlx_loop(env->mlx);
 	return (0);
 }
