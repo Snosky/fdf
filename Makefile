@@ -6,7 +6,7 @@
 #    By: tpayen <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/25 15:06:22 by tpayen            #+#    #+#              #
-#    Updated: 2016/02/27 17:57:11 by tpayen           ###   ########.fr        #
+#    Updated: 2016/02/27 18:43:15 by tpayen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC_FILES = main.c	\
 			get_map.c	\
 			draw_map.c	\
 			draw_line.c	\
+			ft_err_filename.c	\
 
 DIRS = $(OBJDIR)
 

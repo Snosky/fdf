@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 16:45:06 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/27 18:11:52 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 18:42:22 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	draw_map(t_env	*env)
 {
-	t_list	*map = env->map;
+/*	t_list	*map = env->map;
 	t_px	*px;
 	int		x;
 	int		y;
@@ -37,5 +37,6 @@ void	draw_map(t_env	*env)
 			draw_line(x, y, x2, y2, env->mlx, env->win);
 		}
 		map = map->next;
-	}	
+	}	*/
+(void)env;
 }

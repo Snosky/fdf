@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:17:50 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/27 17:21:54 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 18:57:05 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ int		main(int ac, char **av)
 		map = map->next;
 	}
 */
+	t_list	**map = env->map;
+	t_px *px;
+	int	i;
+i = 0;
+	while (map[i])
+	{
+		while (map[i])
+		{
+			px = (t_px *)map[i]->content;
+
+			printf("X: %d, Y: %d, Z: %d\n", px->x, px->y, px->z);
+			map[i] = map[i]->next;
+		}
+		i++;
+	}
 	mlx_loop(env->mlx);
 	return (0);
 }
