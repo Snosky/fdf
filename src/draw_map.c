@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 16:45:06 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/27 18:42:22 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/02/27 22:47:39 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,47 @@ void	draw_map(t_env	*env)
 	}	*/
 (void)env;
 }
+
+/* 
+DRAW MAP EXEMPLE
+
+void	draw_map(t_env *env)
+{
+	t_lst	*line1
+	t_lst	*line2
+	int	i;
+
+	i = 0;
+	line2 = NULL;
+	while (i < env->map_y_max)
+	{
+		line1 = env->map[i];
+		if (((t_px *)line1->content)->y != env->map_y_max)
+			line2 = env->map[i + 1];
+		while (line1)
+		{
+			SI line1->px->x != env->map_x_max 
+				relie line1->px avec line1->next px
+			
+			SI line2 != NULL
+				relie line1->px avec line2->px
+
+			line1 = line1->next;
+			if (line2)
+				line2 = line2->next;
+		}
+		i++;
+	}
+}
+
+Etape 1:
+ _
+|
+Etape 2:
+ _ _
+| |
+Etap 3:
+ _ _ _
+| | | 
+
+etc..
