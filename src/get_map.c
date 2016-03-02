@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:31:53 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/28 17:02:14 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/03/02 16:47:02 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	do_split(char *line, t_env *env)
 	}
 }
 
-void	get_map(char *filename, t_env *env)
+void		get_map(char *filename, t_env *env)
 {
 	int		fd;
 	int		gnl;

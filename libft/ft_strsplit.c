@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 17:14:03 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/27 17:00:18 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/03/02 16:54:37 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static int		wl(const char *s, int i, char c)
 
 char			**ft_strsplit(const char *s, char c)
 {
-
 	char	**ret;
 	int		i;
 	int		k;

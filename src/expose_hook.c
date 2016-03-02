@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_image.c                                     :+:      :+:    :+:   */
+/*   expose_hook.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpayen <tpayen@42.fr>                      +#+  +:+       +#+        */
+/*   By: tpayen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/26 15:09:09 by tpayen            #+#    #+#             */
-/*   Updated: 2016/02/26 15:12:46 by tpayen           ###   ########.fr       */
+/*   Created: 2016/03/02 16:37:38 by tpayen            #+#    #+#             */
+/*   Updated: 2016/03/02 16:39:51 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	*create_image(t_env *env)
+int	expose_hook(t_env *env)
 {
-	
+	mlx_put_image_to_window(env->mlx, env->win, env->img.img, 0, 0);
+	return (0);
 }

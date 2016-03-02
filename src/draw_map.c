@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 16:45:06 by tpayen            #+#    #+#             */
-/*   Updated: 2016/03/01 16:21:00 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/03/02 16:46:21 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static t_px	gpx(t_list *map)
 {
-	return (*((t_px *)map->content));	
+	return (*((t_px *)map->content));
 }
 
-void	draw_map(t_env *env)
+void		draw_map(t_env *env)
 {
 	t_list	*map;
 	t_list	*map_delay;
@@ -35,5 +35,5 @@ void	draw_map(t_env *env)
 		}
 		map = map->next;
 	}
-	//mlx_put_image_to_window(env->mlx, env->win, env->img.img, env->img.pos_x, env->img.pos_y);
+	mlx_put_image_to_window(env->mlx, env->win, env->img.img, 0, 0);
 }

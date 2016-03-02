@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 15:17:50 by tpayen            #+#    #+#             */
-/*   Updated: 2016/03/02 00:00:56 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/03/02 16:46:36 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_err_usage(void)
 	exit(EXIT_FAILURE);
 }
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_env	*env;
 
@@ -29,6 +29,7 @@ int		main(int ac, char **av)
 	mlx_key_hook(env->win, key_hook, env);
 	mlx_loop_hook(env->mlx, loop_hook, env);
 	mlx_mouse_hook(env->win, mouse_hook, env);
+	mlx_expose_hook(env->win, expose_hook, env);
 	mlx_loop(env->mlx);
 	return (0);
 }
